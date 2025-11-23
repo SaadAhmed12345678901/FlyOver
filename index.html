@@ -34,7 +34,7 @@ let bestscore=0;
 // 🔊 Audio
 const jumpSound = new Audio("jump.mp3.mp3");
 const gameOverSound = new Audio("gameover.mp3");
-const bgMusic = new Audio("gameover.mp3");
+const bgMusic = new Audio("");
 bgMusic.loop = true;
 
 // 🖼 Images
@@ -223,7 +223,7 @@ ctx.fillText("Best Score"+ bestscore,120,60)
 canvas.addEventListener("click", () => {
   if (gameState === 0) {
     gameState = 1;
-    bgMusic.play("");
+    bgMusic.play("jump.mp3.mp3");
   } else if (gameState === 1) {
     bird.flap();
   } else if (gameState === 2) {
@@ -236,7 +236,7 @@ document.addEventListener("keydown", (e) => {
   if (e.code === "Space") {
     if (gameState === 0) {
       gameState = 1;
-      // bgMusic.play("");
+      // bgMusic.play("jump.mp3.mp3");
     } else if (gameState === 1) {
       bird.flap();
     } else if (gameState === 2) {
